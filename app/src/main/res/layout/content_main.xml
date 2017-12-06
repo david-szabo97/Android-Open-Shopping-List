@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shopping_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/empty_shopping_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blackTernary">
+
+        <ImageView
+            android:id="@+id/empty_shopping_list_icon"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:tint="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/empty_shopping_list_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/ic_sentiment_very_satisfied_black_24dp" />
+
+        <TextView
+            android:id="@+id/empty_shopping_list_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/empty_shopping_list"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/blackSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/empty_shopping_list_icon"
+            app:layout_constraintStart_toStartOf="@+id/empty_shopping_list_icon"
+            app:layout_constraintTop_toBottomOf="@+id/empty_shopping_list_icon" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/loading_shopping_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blackTernary">
+
+        <ProgressBar
+            android:id="@+id/loading_shopping_list_progress"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:padding="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/loading_shopping_list_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/loading_shopping_list_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/loading_shopping_list"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/blackSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/loading_shopping_list_progress"
+            app:layout_constraintStart_toStartOf="@+id/loading_shopping_list_progress"
+            app:layout_constraintTop_toBottomOf="@+id/loading_shopping_list_progress" />
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

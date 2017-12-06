@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bevásárlólista</string>
+
+    <string name="hint_name">Név</string>
+    <string name="hint_item_price">Ár</string>
+    <string name="hint_item_description">Leírás</string>
+    <string name="hint_item_urgent">Sürgős</string>
+    <string name="hint_item_name">Név</string>
+
+    <string name="add">Hozzáad</string>
+
+    <string name="menu_change_name">Név megváltoztatása</string>
+    <string name="menu_show_actives">Aktívak megjelenítése</string>
+
+    <string name="menu_change_view_compact">Kompakt</string>
+    <string name="menu_change_view_cozy">Kényelmes</string>
+
+    <string name="dialog_name_title">Név megadása</string>
+    <string name="dialog_item_title">Új tétel hozzáadása</string>
+    <string name="dialog_users_title">Online felhasználók</string>
+
+    <string name="notification_title_new_item">Új tétel a bevásárlólistán!</string>
+    <string name="notification_body_new_item">%2$s hozzáadta: %1$s</string>
+
+    <string name="snackbar_database_connected">Csatlakozva az adatbázishoz!</string>
+    <string name="snackbar_database_reconnecting">Elveszett a kapcsolat az adatbázissal, újracsatlakozás…</string>
+    <string name="snackbar_database_connecting">Csatlakozás az adatbázishoz…</string>
+
+    <string name="snackbar_user_connected">Csatlakozott: %1$s</string>
+    <string name="snackbar_user_disconnected">Kilépett: %1$s</string>
+
+    <string name="loading_shopping_list">Adatok betöltése…</string>
+    <string name="empty_shopping_list">Mindent megvettél!</string>
+
+    <string name="shopping_list_item_created_by">Hozzáadta: %1$s</string>
+    <string name="shopping_list_item_price_compact">Ár: %1$s</string>
+    <string name="shopping_list_item_price_cozy">%1$s</string>
+</resources>

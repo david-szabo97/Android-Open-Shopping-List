@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shopping List</string>
+
+    <string name="hint_name">Name</string>
+    <string name="hint_item_price">Price</string>
+    <string name="hint_item_description">Description</string>
+    <string name="hint_item_urgent">Urgent</string>
+    <string name="hint_item_name">Name</string>
+
+    <string name="add">Add</string>
+
+    <string name="menu_change_name">Change name</string>
+    <string name="menu_show_actives">Show actives</string>
+
+    <string name="menu_change_view_compact">Compact</string>
+    <string name="menu_change_view_cozy">Cozy</string>
+
+    <string name="dialog_name_title">Change name</string>
+    <string name="dialog_item_title">Add new item</string>
+    <string name="dialog_users_title">Online users</string>
+
+    <string name="notification_title_new_item">New item has been added to the shopping list!</string>
+    <string name="notification_body_new_item">%2$s added: %1$s</string>
+
+    <string name="snackbar_database_connected">Connected to the database!</string>
+    <string name="snackbar_database_reconnecting">Lost the connection to the database, reconnecting…</string>
+    <string name="snackbar_database_connecting">Connecting to the database…</string>
+
+    <string name="snackbar_user_connected">Connected: %1$s</string>
+    <string name="snackbar_user_disconnected">Disconnected: %1$s</string>
+
+    <string name="loading_shopping_list">Loading your list…</string>
+    <string name="empty_shopping_list">Nothing is on your list!</string>
+
+    <string name="shopping_list_item_created_by">Added by: %1$s</string>
+    <string name="shopping_list_item_price_compact">Price: %1$s</string>
+    <string name="shopping_list_item_price_cozy">%1$s</string>
+</resources>

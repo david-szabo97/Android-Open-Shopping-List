@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.messedcode.openshoppinglist.ui.list.ShoppingListActivity">
+
+    <item
+        android:id="@+id/menu_show_actives"
+        android:icon="@drawable/ic_group_white_24dp"
+        android:title="@string/menu_show_actives"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_change_name"
+        android:title="@string/menu_change_name"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_change_view"
+        android:title="@string/menu_change_view_compact"
+        app:showAsAction="never" />
+</menu>
