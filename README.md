@@ -13,6 +13,18 @@
     - **Debug signing certificate SHA-1**: *LEAVE EMPTY*
   - Download configuration file
   - Move configuration file to `/app/src/google-services.json`
+  - click database on the left sidebar
+  - Change to RULES tab
+  - Replace `.read` and `.write` values to `true`
+
+    ```json
+    {
+      "rules": {
+        ".read": "true",
+        ".write": "true"
+      }
+    }
+    ```
 
 # Use Case Goals
 Make this application usable in public. (Publishing to Play Store.)
