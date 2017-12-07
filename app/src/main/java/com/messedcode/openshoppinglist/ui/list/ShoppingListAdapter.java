@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 import com.messedcode.openshoppinglist.R;
 import com.messedcode.openshoppinglist.model.ShoppingListItem;
@@ -36,6 +38,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
     private ArrayList<ShoppingListItem> data = new ArrayList<>();
     private int viewSize = VIEW_SIZE_COMPACT;
+
+    private Set<String> expandedItemKeys = new HashSet<>();
 
     public ShoppingListAdapter(Context context, RecyclerView recyclerView) {
         this.context = context;
@@ -66,7 +70,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         holder.itemView.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
         holder.resetBackgroundColor();
         holder.resetTextColor();
-
+        holder.isExpanded = expandedItemKeys.contains(item.key);
 
         holder.nameTextView.setText(item.name);
         holder.createdByTextView.setText(context.getString(R.string.shopping_list_item_created_by, item.createdBy));
@@ -81,13 +85,20 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
         String formattedPrice = currencyFormatter.format((double) item.price / 100.0);
         if (viewSize == VIEW_SIZE_COMPACT) {
-            holder.detailsView.setVisibility(View.GONE);
+            holder.detailsView.setVisibility((holder.isExpanded) ? View.VISIBLE : View.GONE);
             holder.priceTextView.setText(context.getString(R.string.shopping_list_item_price_compact, formattedPrice));
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     boolean expand = holder.detailsView.getVisibility() == View.GONE;
+                    holder.isExpanded = expand;
+
+                    if (expand) {
+                        expandedItemKeys.add(holder.data.key);
+                    } else {
+                        expandedItemKeys.remove(holder.data.key);
+                    }
 
                     holder.detailsView.setVisibility((expand) ? View.VISIBLE : View.GONE);
 
@@ -117,7 +128,9 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
         if (index >= 0 && index <= data.size() - 1) {
             ViewHolder vh = (ViewHolder) newHolder;
+
             vh.isSwiped = false;
+            expandedItemKeys.remove(vh.data.key);
 
             data.remove(index);
             notifyItemRemoved(index);
@@ -174,13 +187,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         Log.v(TAG, "updateItem index=" + index);
 
         if (index != -1) {
-            if (item.isActive()) {
-                data.set(index, item);
-                notifyItemChanged(index);
-            } else {
-                data.set(index, item);
-                notifyItemChanged(index);
-            }
+            data.set(index, item);
+            notifyItemChanged(index);
         }
     }
 
@@ -224,6 +232,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
         public ShoppingListItem data;
 
         public boolean isSwiped;
+        public boolean isExpanded = false;
 
         public ViewHolder(ViewGroup vg) {
             super(vg);
