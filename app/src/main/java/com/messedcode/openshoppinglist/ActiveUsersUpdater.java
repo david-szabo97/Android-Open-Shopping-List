@@ -112,6 +112,7 @@ public class ActiveUsersUpdater implements Runnable {
 
     public void stop() {
         active = false;
+        handler.removeCallbacksAndMessages(null);
     }
 
     public void setInterval(int interval) {
