@@ -44,7 +44,8 @@ public class ItemDialogFragment extends AppCompatDialogFragment {
                         TextInputLayout inputPrice = dialog.findViewById(R.id.input_item_price);
                         int price = 0;
                         try {
-                            price = Integer.parseInt(inputPrice.getEditText().getText().toString());
+                            double priceDouble = Double.parseDouble(inputPrice.getEditText().getText().toString());
+                            price = (int) (priceDouble * 100);
                         } catch (NumberFormatException e) {
                         }
                         CheckBox inputUrgent = dialog.findViewById(R.id.checkbox_item_urgent);
