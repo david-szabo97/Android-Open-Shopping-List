@@ -3,16 +3,16 @@
 ![](https://i.imgur.com/rbqwXdk.gif)
 
 # Prerequisites
-- *Firebase Project*
+- **Firebase Project**
   - Sign up at https://firebase.google.com/
   - Add a new project
   - Open your new project
   - Add Android app to the project
-    - *Android package name*: com.messedcode.openshoppinglist
-    - *App nickname*: Open Shopping List
-    - *Debug signing certificate SHA-1*: LEAVE EMPTY
+    - **Android package name**: com.messedcode.openshoppinglist
+    - **App nickname**: Open Shopping List
+    - **Debug signing certificate SHA-1**: *LEAVE EMPTY*
   - Download configuration file
-  - Move configuration file to `/app/src/google-services.jso`
+  - Move configuration file to `/app/src/google-services.json`
 
 # Use Case Goals
 Make this application usable in public. (Publishing to Play Store.)
