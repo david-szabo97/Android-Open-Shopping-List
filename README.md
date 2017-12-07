@@ -2,6 +2,13 @@
 
 ![](https://i.imgur.com/rbqwXdk.gif)
 
+# Features
+- Shows online users, a snackbar tells you when someone connects or disconnects
+- Delete and Check swipe animations
+- Urgent items: They are on the top always
+- Animations when someone else removes, adds or checks an item
+- Cozy and Compact layout
+
 # Prerequisites
 - **Firebase Project**
   - Sign up at https://firebase.google.com/
