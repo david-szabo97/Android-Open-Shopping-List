@@ -13,10 +13,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Locale;
 
 import com.messedcode.openshoppinglist.R;
 import com.messedcode.openshoppinglist.model.ShoppingListItem;
@@ -30,6 +32,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
     private final RecyclerView recyclerView;
     private final Context context;
+    private final NumberFormat currencyFormatter;
 
     private ArrayList<ShoppingListItem> data = new ArrayList<>();
     private int viewSize = VIEW_SIZE_COMPACT;
@@ -37,6 +40,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
     public ShoppingListAdapter(Context context, RecyclerView recyclerView) {
         this.context = context;
         this.recyclerView = recyclerView;
+
+        currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());
     }
 
     @Override
@@ -74,7 +79,7 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapte
 
         holder.data = item;
 
-        String formattedPrice = item.price + " Ft";
+        String formattedPrice = currencyFormatter.format((double) item.price / 100.0);
         if (viewSize == VIEW_SIZE_COMPACT) {
             holder.detailsView.setVisibility(View.GONE);
             holder.priceTextView.setText(context.getString(R.string.shopping_list_item_price_compact, formattedPrice));
